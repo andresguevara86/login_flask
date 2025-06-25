@@ -8,8 +8,9 @@
 
 <body>
     <div class="dashboard-container">
-        <h2>Bienvenido, {{ email }}!</h2>
+        <h2>Bienvenido, {{ usuario }}!</h2>
         <p>Has iniciado sesión correctamente.</p>
+
         <a href="{{ url_for('logout') }}" class="secondary-button">Cerrar Sesión</a>
     </div>
 </body>

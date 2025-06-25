@@ -32,6 +32,7 @@ def login():
             session['loggedin'] = True
             session['id'] = user['id']
             session['email'] = user['email']
+            session['usuario'] = user['usuario']
             flash('Inicio de sesión exitoso!', 'success')
             return redirect(url_for('dashboard'))
         else:
@@ -45,7 +46,7 @@ def login():
 @app.route('/dashboard')
 def dashboard():
     if 'loggedin' in session:
-        return render_template('dashboard.html', email=session['email'])
+        return render_template('dashboard.html', email=session['email'], usuario=session['usuario'])
     return redirect(url_for('login'))
 
 # Ruta para cerrar sesión
