@@ -90,10 +90,11 @@ body {
 }
 
 .logo {
+    display: block;
     width: 150px;
     margin-bottom: 20px;
     justify-self: center;
-    display: block;
+    justify-content: center;
 }
 
 .title {
