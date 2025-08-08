@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block title %} Dashboard {% endblock %}
+{% block content %}
+
+<div class="card" style="width: 30rem;">
+    <img class="card-img-top" src="{{ url_for('static', filename='images/fondo_mecanico.png') }}" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text">Hola, <span>{{ usuario }}</span>. Este modulo esta en construcción </p>
+    </div>
+    <h3 style="text-align: center;"> GRACIAS POR TU COMPRENSIÓN</h3>
+</div>
+{% endblock %}

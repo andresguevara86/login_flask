@@ -18,7 +18,9 @@ body {
     align-items: center;
     height: 100vh;
     font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(15deg, #142850, #14365f, #13476f, #125d80, #107792, #0d96a5, #09b8b4, #04ccb1);
+    /*  background: linear-gradient(15deg, #142850, #14365f, #13476f, #125d80, #107792, #0d96a5, #09b8b4, #04ccb1); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('images/fondo_mecanico2.png');
+    background-size: cover;
 }
 
 
@@ -90,9 +92,9 @@ body {
 }
 
 .logo {
-    display: block;
-    width: 150px;
-    margin-bottom: 20px;
+    display: flex;
+    width: 180px;
+    margin-bottom: 10px;
     justify-self: center;
     justify-content: center;
 }

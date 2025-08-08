@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Bootstrap 5, estilos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Iconos BoxIcons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Iconos Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Mis estilos CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylenav.css') }}">
+
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex justify-content-between p-4">
+                <div class="sidebar-logo">
+                    <a href="#">Taller SPEED</a>
+                </div>
+                <button class="toggle-btn border-0" type="button">
+                    <i id="icon" class='bx bxs-chevrons-right'></i>
+                </button>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="{{ url_for('dashboard')}}" class="sidebar-link">
+                        <i class='bx bx-line-chart'></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#orden" aria-expanded="false" aria-controls="orden">
+                        <i class='bx bxs-wrench'></i>
+                        <span>Ordenes </span>
+                    </a>
+                    <ul id="orden" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-wrench'></i>
+                                Administrar Ordenes
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-search-alt-2'></i>
+                                Historial de Ordenes
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#venta" aria-expanded="false" aria-controls="venta">
+                        <i class='bx bx-cart-add'></i>
+                        <span>Ventas</span>
+                    </a>
+                    <ul id="venta" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-dollar'></i>
+                                Crear Venta
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-edit'></i>
+                                Administrar ventas
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#compra" aria-expanded="false" aria-controls="compra">
+                        <i class='bx bxl-shopify'></i>
+                        <span>Compras</span>
+                    </a>
+                    <ul id="compra" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-shopping-bag'></i>
+                                Registrar Compra
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-edit-alt'></i>
+                                Administrar Compras
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#inventario" aria-expanded="false" aria-controls="inventario">
+                        <i class='bx bx-package'></i>
+                        <span>Inventario</span>
+                    </a>
+                    <ul id="inventario" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-list-ol'></i>
+                                Categorias
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bxs-truck'></i>
+                                Proveedores
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-list-plus'></i>
+                                Inventario
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-receipt'></i>
+                                Historial Inventario
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#reportes" aria-expanded="false" aria-controls="Reportes">
+                        <i class='bx bx-edit'></i>
+                        <span>Reportes</span>
+                    </a>
+                    <ul id="reportes" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-cart-add'></i>
+                                Ventas
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bxl-shopify'></i>
+                                Gastos
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bxs-wrench'></i>
+                                Ordenes
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bxs-badge-dollar'></i>
+                                Caja
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#mantenimiento" aria-expanded="false" aria-controls="mantenimiento">
+                        <i class='bx bxs-traffic-barrier'></i>
+                        <span>Mantenimiento</span>
+                    </a>
+                    <ul id="mantenimiento" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-detail'> </i>
+                                Marcas
+
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-detail'></i>
+                                Modelos
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-detail'></i>
+                                Tipo de Equipo
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bxs-user-detail'></i>
+                                Clientes
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                                <i class='bx bx-group'></i>
+                                Usuarios
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="prueba.html" class="sidebar-link">
+                        <i class='bx bx-cog'></i>
+                        <span>Configuración</span>
+                    </a>
+                </li>
+
+            </ul>
+            <div class="sidebar-footer">
+                <a href="{{ url_for('logout') }}" class="sidebar-link">
+                    <i class='bx bx-log-out-circle'></i>
+                    <span>Salir</span>
+                </a>
+            </div>
+
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-4 py-3">
+                <form action="#" class="d-none d-sm-inline-block">
+                    <div class="input-group input-group-navbar">
+                        <input type="text" class="form-control border-0 rounded-0 pe-0" placeholder="Buscar..."
+                            aria-label="">
+                        <button class="btn border-0 rounded-0" type="button">
+                            <i class='bx bx-search-alt'></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <span>Hola, {{ usuario | upper }}</span>
+                                <img src="{{ url_for('static', filename='images/avatar.png') }}"
+                                    class="avatar img-fluid" alt="Imagen de perfil">
+
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end rounded-0 border-0 shadow mt-3">
+                                <a href="#" class="dropdown-item">
+                                    <i class='bx bx-data'></i>
+                                    <span>Analytics</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <i class='bx bx-cog'></i>
+                                    <span>configuración</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class='bx bx-help-circle'></i>
+                                    <span>Centro de Ayuda</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <!-- Script de Bootstrap 5 -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+                crossorigin="anonymous"></script>
+            <!-- Script del proyecto -->
+            <script src="{{ url_for('static', filename='script.js') }}"></script>
+            <!-- Chart.js Graficos -->
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            {% block content %}
+            <!-- Bloque de contenido -->
+            {% endblock %}
+
+
+
+</body>
+
+
+</html>
