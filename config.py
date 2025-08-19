@@ -4,3 +4,4 @@ MYSQL_USER = 'root'
 MYSQL_PASSWORD = ''
 MYSQL_DB = 'login_2'
 MYSQL_CURSORCLASS = 'DictCursor'
+

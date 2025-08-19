@@ -5,6 +5,16 @@
 
 <!-- Script del proyecto -->
 
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{ category }} alert-dismissible fade show">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
 </nav>
 <main class="content px-3 py-4">
     <div class="container-fluid">
@@ -93,7 +103,7 @@
                             <tbody class="table-group-divider">
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>{{ usuario }}</td>
+                                    <td>{{ username }}</td>
                                     <td>Renault Clio 2</td>
                                     <td>$250.000</td>
                                 </tr>
@@ -111,7 +121,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">4</th>
-                                    <td>{{ usuario }}</td>
+                                    <td>{{ username }}</td>
                                     <td>Renault Clio 2</td>
                                     <td>$250.000</td>
                                 </tr>

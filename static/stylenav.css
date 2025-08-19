@@ -40,6 +40,10 @@ body {
 
 }
 
+.menu {
+    position: sticky;
+}
+
 
 
 #sidebar.expand {

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Crear Nuevo Cliente</h2>
+
+    <form method="POST">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Documento</label>
+            <input type="text" class="form-control" id="documento" name="documento" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombre" name="nombres" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono">
+        </div>
+
+        <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="direccion" class="form-label">Observaciones</label>
+            <textarea class="form-control" id="observaciones" name="observaciones" rows="3"></textarea>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-outline-primary">Guardar</button>
+        <a href="{{ url_for('cliente') }}" class="btn btn-outline-danger">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

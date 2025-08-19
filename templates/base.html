@@ -196,7 +196,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{ url_for('nuevo')}}" class="sidebar-link">
+                            <a href="{{ url_for('cliente')}}" class="sidebar-link">
                                 <i class='bx bxs-user-detail'></i>
                                 Clientes
                             </a>
@@ -210,7 +210,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a href="prueba.html" class="sidebar-link">
+                    <a href="{{ url_for('nuevo')}}" class="sidebar-link">
                         <i class='bx bx-cog'></i>
                         <span>Configuración</span>
                     </a>
@@ -240,7 +240,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <span>Hola, {{ usuario | upper }}</span>
+                                <span>Hola, {{ username | capitalize }}</span>
                                 <img src="{{ url_for('static', filename='images/avatar.png') }}"
                                     class="avatar img-fluid" alt="Imagen de perfil">
 

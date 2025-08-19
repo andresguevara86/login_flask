@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Editar Cliente</h2>
+
+    <form method="POST">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Documento</label>
+            <input type="text" class="form-control" id="documento" name="documento" value="{{ cliente.documento }}"
+                required>
+        </div>
+
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="nombres" name="nombres" value="{{ cliente.nombres }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="{{ cliente.telefono }}">
+        </div>
+        <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" value="{{ cliente.direccion }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ cliente.email }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="direccion" class="form-label">Observaciones</label>
+            <textarea class="form-control" id="observaciones" name="observaciones"
+                rows="3">{{ cliente.observaciones }}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary">Actualizar</button>
+        <a href="{{ url_for('cliente') }}" class="btn btn-outline-danger">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
